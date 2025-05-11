@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA</title>
+    <style>
+   </style>
+</head>
+<body>
+    <form>
+        <input type="number" name="n1" id="n1" placeholder="NUMERO 1">
+        <input type="number" name="n2" id="n2" placeholder="NUMERO 2">
+        
+        <select id="operacao">
+            <option value="soma">+</option>
+            <option value="subtracao">-</option>
+            <option value="multiplicacao">*</option>
+            <option value="divisao">/</option>
+        </select>
+        <button type="button" onclick="calcular()" id="botao">CALCULAR</button>
+    </form>
+    <h2 id="resultado">RESULTADO:</h2>
+
+    <script>
+    function calcular() {
+        let resultado = document.getElementById("resultado");
+        var num1 = parseFloat(document.getElementById("n1").value);
+        var num2 = parseFloat(document.getElementById("n2").value);
+        var operacao = document.getElementById("operacao").value;
+
+        switch (operacao){
+            case "soma":
+                resultado = num1 + num2;
+                break;
+            case "subtracao":
+                resultado = num1 - num2;
+                break;
+            case "multiplicacao":
+                resultado = num1 * num2;
+                break;
+            case "divisao":
+                resultado = num1 / num2;
+                break;
+            default:
+                resultado = "OPERAÇÃO INVALIDA!!"
+                
+        }
+        document.getElementById("resultado").innerHTML = "RESULTADO: " + resultado; 
+        console.log(resultado, num1, num2,);
+    } 
+    </script>
+</body>
+</html>
